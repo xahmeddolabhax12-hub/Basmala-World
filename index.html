@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#100c20">
+    <title>Basmala's World | عالم بسملة</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <canvas id="universe"></canvas>
+    <div class="ambient-glow"></div>
+
+    <!-- شاشة الدخول -->
+    <section class="welcome-screen" id="welcomeScreen">
+        <div class="welcome-stars">✦　✧　⋆　✧　✦</div>
+        <div class="welcome-heart">♡</div>
+        <p class="eyebrow">A WORLD CREATED JUST FOR YOU</p>
+        <h1>Welcome, <span>Basmala</span></h1>
+        <p class="welcome-description">
+            هناك عالم صغير ينتظركِ...<br>
+            عالم مليء بالأمنيات والأسرار والحب.
+        </p>
+        <button class="primary-btn" id="enterWorld">
+            ادخلي عالمكِ <span>✦</span>
+        </button>
+        <div class="welcome-footer">MADE WITH LOVE ♥</div>
+    </section>
+
+    <!-- العالم الرئيسي -->
+    <main class="world hidden" id="world">
+
+        <header class="topbar">
+            <a class="brand" href="#">B<span>♥</span>W</a>
+            <div class="world-status">
+                <span class="status-dot"></span>
+                YOUR PRIVATE UNIVERSE
+            </div>
+            <button class="sound-btn" id="soundBtn">♫ الصوت</button>
+        </header>
+
+        <section class="world-intro">
+            <p class="eyebrow">THE UNIVERSE OF BASMALA</p>
+            <h1>أهلًا بيكي في <span>عالمكِ</span></h1>
+            <p>كل نجمة هنا وراها حكاية... وكل مكان مخبّي مفاجأة.</p>
+        </section>
+
+        <!-- مساحة العالم -->
+        <section class="universe-map">
+
+            <div class="moon"></div>
+
+            <div class="planet planet-one"></div>
+            <div class="planet planet-two"></div>
+
+            <div class="path path-one"></div>
+            <div class="path path-two"></div>
+            <div class="path path-three"></div>
+
+            <!-- القلعة -->
+            <button class="location castle" data-place="castle">
+                <span class="location-icon">🏰</span>
+                <span class="location-name">قلعة الأمنيات</span>
+                <span class="location-hint">اكتشفي سرها</span>
+            </button>
+
+            <!-- الحديقة -->
+            <button class="location garden" data-place="garden">
+                <span class="location-icon">🌸</span>
+                <span class="location-name">حديقة الورود</span>
+                <span class="location-hint">وردة ليكي</span>
+            </button>
+
+            <!-- النجوم -->
+            <button class="location stars-place" data-place="stars">
+                <span class="location-icon">🌌</span>
+                <span class="location-name">بحر النجوم</span>
+                <span class="location-hint">أمنية في السماء</span>
+            </button>
+
+            <!-- صندوق الهدايا -->
+            <button class="location gift-place" data-place="gift">
+                <span class="location-icon">🎁</span>
+                <span class="location-name">الصندوق السري</span>
+                <span class="location-hint">هدية مستنياكي</span>
+            </button>
+
+            <!-- القلب -->
+            <button class="location heart-place" data-place="heart">
+                <span class="location-icon">💗</span>
+                <span class="location-name">جزيرة القلب</span>
+                <span class="location-hint">مكانك المفضل</span>
+            </button>
+
+            <div class="floating-flower flower-one">✿</div>
+            <div class="floating-flower flower-two">❀</div>
+            <div class="floating-flower flower-three">✿</div>
+
+        </section>
+
+        <!-- لوحة التحكم -->
+        <section class="explore-panel">
+            <div class="explore-heading">
+                <div>
+                    <p class="eyebrow">YOUR ADVENTURE</p>
+                    <h2>رحلتك لسه في أولها</h2>
+                </div>
+                <div class="discovery-count">
+                    <span id="discoveredCount">0</span>/5
+                    <small>أماكن اكتشفتيها</small>
+                </div>
+            </div>
+
+            <div class="progress-track">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <p class="explore-note">
+                اضغطي على أي مكان في العالم واكتشفي المفاجأة اللي جواه ♥
+            </p>
+        </section>
+
+        <!-- لعبة الأسئلة -->
+        <section class="mini-game">
+            <div class="game-icon">✨</div>
+            <div class="game-content">
+                <p class="eyebrow">A LITTLE GAME</p>
+                <h2>سؤال صغير ليكي</h2>
+                <p>جاهزة تعرفي الإجابة على سؤال من قلبي؟</p>
+            </div>
+            <button class="secondary-btn" data-place="quiz">ابدئي اللعبة</button>
+        </section>
+
+        <!-- عداد الحكاية -->
+        <section class="journey">
+            <p class="eyebrow">OUR SPECIAL DAY</p>
+            <h2>من هنا بدأت حكايتنا ❤️</h2>
+            <p class="journey-date">13 NOVEMBER 2026</p>
+            <div class="days-counter">
+                <strong id="daysCount">0</strong>
+                <span>يوم من الحكاية</span>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-heart">♥</div>
+            <h2>عالمكِ هيفضل مفتوح دايمًا</h2>
+            <p>Made with love, only for Basmala.</p>
+            <span class="footer-brand">BASMALA'S WORLD © 2026</span>
+        </footer>
+
+    </main>
+
+    <!-- نافذة المفاجآت -->
+    <div class="modal" id="modal">
+        <div class="modal-card">
+            <button class="close-modal" id="closeModal">×</button>
+            <div class="modal-symbol" id="modalSymbol">♡</div>
+            <p class="eyebrow" id="modalEyebrow">A SECRET FOR YOU</p>
+            <h2 id="modalTitle">رسالة ليكي</h2>
+            <div class="modal-divider"></div>
+            <p class="modal-text" id="modalText"></p>
+            <div class="modal-extra" id="modalExtra"></div>
+            <button class="primary-btn modal-btn" id="modalAction">كمّلي رحلتكِ ♥</button>
+        </div>
+    </div>
+
+    <audio id="backgroundMusic" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
