@@ -1,178 +1,144 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#100c20">
-    <title>Basmala's World | عالم بسملة</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17091d">
+  <title> Basmala Dream | عالم بسملة </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <canvas id="particles" aria-hidden="true"></canvas>
 
-    <canvas id="universe"></canvas>
-    <div class="ambient-glow"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Basmala Dream home">
+      <span class="brand-mark">♡</span>
+      <span>Basmala <b>Dream</b></span>
+    </a>
+    <nav class="nav-links" aria-label="التنقل الرئيسي">
+      <a href="#home" class="active">الرئيسية</a>
+      <a href="#reasons">أسباب حبي</a>
+      <a href="#gift">المفاجأة</a>
+    </nav>
+    <button class="music-button" id="musicButton" type="button" aria-label="تشغيل الموسيقى">
+      <span class="music-icon">♫</span><span id="musicLabel">موسيقى هادئة</span>
+      <span class="music-state"></span>
+    </button>
+  </header>
 
-    <!-- شاشة الدخول -->
-    <section class="welcome-screen" id="welcomeScreen">
-        <div class="welcome-stars">✦　✧　⋆　✧　✦</div>
-        <div class="welcome-heart">♡</div>
-        <p class="eyebrow">A WORLD CREATED JUST FOR YOU</p>
-        <h1>Welcome, <span>Basmala</span></h1>
-        <p class="welcome-description">
-            هناك عالم صغير ينتظركِ...<br>
-            عالم مليء بالأمنيات والأسرار والحب.
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> رسالة صغيرة من قلبي</p>
+        <h1>إلى <em>بسملة</em>…<br>أجمل حكاية في عالمي</h1>
+        <p class="hero-description">
+          عملتلك عالم صغير مليان ورد وقلوب ونجوم،
+          عشان أقولك بطريقة مختلفة إن وجودك في حياتي حاجة جميلة.
         </p>
-        <button class="primary-btn" id="enterWorld">
-            ادخلي عالمكِ <span>✦</span>
-        </button>
-        <div class="welcome-footer">MADE WITH LOVE ♥</div>
+        <div class="hero-actions">
+          <button class="primary-button" id="openLetter" type="button">افتحي رسالتي <span>♡</span></button>
+          <a class="text-link" href="#world">اكتشفي عالمك <span>↓</span></a>
+        </div>
+        <div class="mini-note">
+          <span class="mini-heart">♥</span>
+          <span>اتعملت بكل حب… مخصوص ليكي</span>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="art-glow"></div>
+        <div class="image-frame">
+          <img src="assets/basmala-romantic-scene.png" alt="قطة بيضاء بتاج وسط الورود والقلوب، هدية رومانسية لبسملة">
+          <div class="image-shine"></div>
+        </div>
+        <div class="floating-tag tag-top"><span>🌹</span> وردة ليكي</div>
+        <div class="floating-tag tag-bottom"><span>🐾</span> مياو… بحبك</div>
+      </div>
     </section>
 
-    <!-- العالم الرئيسي -->
-    <main class="world hidden" id="world">
+    <section class="world-section" id="world">
+      <div class="section-heading">
+        <p class="eyebrow">A LITTLE WORLD FOR YOU</p>
+        <h2>اختاري باب وافتحي <em>مفاجأة</em></h2>
+        <p>كل ركن هنا مخبّي رسالة صغيرة ليكي.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card" id="reasons">
+          <div class="feature-icon pink">♡</div>
+          <p class="card-kicker">01 / FROM MY HEART</p>
+          <h3>أسباب حبي ليكي</h3>
+          <p>حاجات كتير صغيرة بتخلّي وجودك مميز في عيني.</p>
+          <button class="card-link" data-open="reasons" type="button">اكتشفي الأسباب <span>←</span></button>
+        </article>
+        <article class="feature-card feature-card-highlight" id="gift">
+          <div class="feature-icon gold">✧</div>
+          <p class="card-kicker">02 / A SECRET GIFT</p>
+          <h3>علبة المفاجأة</h3>
+          <p>هدية بسيطة مستنياكي تفتحيها بنفسك.</p>
+          <button class="card-link" data-open="gift" type="button">افتحي الهدية <span>←</span></button>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon violet">🐱</div>
+          <p class="card-kicker">03 / LITTLE CAT</p>
+          <h3>القطة بتقولك</h3>
+          <p>اضغطي على كف القطة واسمعي رسالتها اللطيفة.</p>
+          <button class="card-link" id="meowButton" type="button">مياااو! <span>←</span></button>
+        </article>
+      </div>
+    </section>
 
-        <header class="topbar">
-            <a class="brand" href="#">B<span>♥</span>W</a>
-            <div class="world-status">
-                <span class="status-dot"></span>
-                YOUR PRIVATE UNIVERSE
-            </div>
-            <button class="sound-btn" id="soundBtn">♫ الصوت</button>
-        </header>
+    <section class="cat-playground" id="catWorld">
+      <div class="section-heading">
+        <p class="eyebrow">YOUR LITTLE LOVE COMPANION</p>
+        <h2>قطة بسملة <em>المشاغبة</em></h2>
+        <p>دوسي على القطة… عندها كلام كتير عايزة تقولهولك 🐾</p>
+      </div>
+      <div class="cat-room">
+        <div class="cat-stars" aria-hidden="true">✦　♡　✧　♡　✦</div>
+        <div class="speech-bubble" id="catSpeech" aria-live="polite">مياااو! يا بسملة، إنتِ قمر ❤️</div>
+        <button class="cat-character" id="petCat" type="button" aria-label="داعبي القطة">
+          <span class="cat-ear left-ear"></span><span class="cat-ear right-ear"></span>
+          <span class="cat-face"><span class="cat-eye left-eye"></span><span class="cat-eye right-eye"></span><span class="cat-nose"></span><span class="cat-mouth">⌣</span><span class="cat-whiskers whiskers-left">≋</span><span class="cat-whiskers whiskers-right">≋</span></span>
+          <span class="cat-bow">♥</span>
+          <span class="cat-paw paw-left">♡</span><span class="cat-paw paw-right">♡</span>
+        </button>
+        <p class="cat-hint">اضغطي عليّا 5 مرات وشوفي المفاجأة ✨</p>
+        <div class="love-meter"><div class="meter-label"><span>مستوى حب القطة ليكي</span><b id="lovePercent">0%</b></div><div class="meter-track"><span id="loveFill"></span></div></div>
+        <button class="outline-button cat-reset" id="catTreat" type="button">اديها وردة 🌹</button>
+      </div>
+    </section>
 
-        <section class="world-intro">
-            <p class="eyebrow">THE UNIVERSE OF BASMALA</p>
-            <h1>أهلًا بيكي في <span>عالمكِ</span></h1>
-            <p>كل نجمة هنا وراها حكاية... وكل مكان مخبّي مفاجأة.</p>
-        </section>
+    <section class="final-note">
+      <div class="final-heart">♥</div>
+      <p class="eyebrow">ONE LAST THING</p>
+      <h2>خلي ضحكتك دايمًا <em>منوّرة</em></h2>
+      <p>مش لازم يكون في مناسبة عشان أقولك إنك غالية.</p>
+      <button class="outline-button" id="sendHearts" type="button">ابعتي قلوب للسماء <span>♡</span></button>
+    </section>
+  </main>
 
-        <!-- مساحة العالم -->
-        <section class="universe-map">
+  <footer>
+    <span>صُنع بحب لبسملة</span><span class="footer-heart">♥</span><span> Basmala Dream · 2026</span>
+  </footer>
 
-            <div class="moon"></div>
+  <div class="modal-backdrop" id="modal" aria-hidden="true">
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="closeModal" type="button" aria-label="إغلاق">×</button>
+      <div class="modal-symbol" id="modalSymbol">♡</div>
+      <p class="eyebrow" id="modalEyebrow">A NOTE FOR YOU</p>
+      <h2 id="modalTitle">رسالة ليكي</h2>
+      <div class="modal-content" id="modalContent"></div>
+      <button class="primary-button modal-action" id="modalDone" type="button">رجوع للعالم <span>♡</span></button>
+    </section>
+  </div>
 
-            <div class="planet planet-one"></div>
-            <div class="planet planet-two"></div>
-
-            <div class="path path-one"></div>
-            <div class="path path-two"></div>
-            <div class="path path-three"></div>
-
-            <!-- القلعة -->
-            <button class="location castle" data-place="castle">
-                <span class="location-icon">🏰</span>
-                <span class="location-name">قلعة الأمنيات</span>
-                <span class="location-hint">اكتشفي سرها</span>
-            </button>
-
-            <!-- الحديقة -->
-            <button class="location garden" data-place="garden">
-                <span class="location-icon">🌸</span>
-                <span class="location-name">حديقة الورود</span>
-                <span class="location-hint">وردة ليكي</span>
-            </button>
-
-            <!-- النجوم -->
-            <button class="location stars-place" data-place="stars">
-                <span class="location-icon">🌌</span>
-                <span class="location-name">بحر النجوم</span>
-                <span class="location-hint">أمنية في السماء</span>
-            </button>
-
-            <!-- صندوق الهدايا -->
-            <button class="location gift-place" data-place="gift">
-                <span class="location-icon">🎁</span>
-                <span class="location-name">الصندوق السري</span>
-                <span class="location-hint">هدية مستنياكي</span>
-            </button>
-
-            <!-- القلب -->
-            <button class="location heart-place" data-place="heart">
-                <span class="location-icon">💗</span>
-                <span class="location-name">جزيرة القلب</span>
-                <span class="location-hint">مكانك المفضل</span>
-            </button>
-
-            <div class="floating-flower flower-one">✿</div>
-            <div class="floating-flower flower-two">❀</div>
-            <div class="floating-flower flower-three">✿</div>
-
-        </section>
-
-        <!-- لوحة التحكم -->
-        <section class="explore-panel">
-            <div class="explore-heading">
-                <div>
-                    <p class="eyebrow">YOUR ADVENTURE</p>
-                    <h2>رحلتك لسه في أولها</h2>
-                </div>
-                <div class="discovery-count">
-                    <span id="discoveredCount">0</span>/5
-                    <small>أماكن اكتشفتيها</small>
-                </div>
-            </div>
-
-            <div class="progress-track">
-                <div class="progress-fill" id="progressFill"></div>
-            </div>
-
-            <p class="explore-note">
-                اضغطي على أي مكان في العالم واكتشفي المفاجأة اللي جواه ♥
-            </p>
-        </section>
-
-        <!-- لعبة الأسئلة -->
-        <section class="mini-game">
-            <div class="game-icon">✨</div>
-            <div class="game-content">
-                <p class="eyebrow">A LITTLE GAME</p>
-                <h2>سؤال صغير ليكي</h2>
-                <p>جاهزة تعرفي الإجابة على سؤال من قلبي؟</p>
-            </div>
-            <button class="secondary-btn" data-place="quiz">ابدئي اللعبة</button>
-        </section>
-
-        <!-- عداد الحكاية -->
-        <section class="journey">
-            <p class="eyebrow">OUR SPECIAL DAY</p>
-            <h2>من هنا بدأت حكايتنا ❤️</h2>
-            <p class="journey-date">13 NOVEMBER 2026</p>
-            <div class="days-counter">
-                <strong id="daysCount">0</strong>
-                <span>يوم من الحكاية</span>
-            </div>
-        </section>
-
-        <footer>
-            <div class="footer-heart">♥</div>
-            <h2>عالمكِ هيفضل مفتوح دايمًا</h2>
-            <p>Made with love, only for Basmala.</p>
-            <span class="footer-brand">BASMALA'S WORLD © 2026</span>
-        </footer>
-
-    </main>
-
-    <!-- نافذة المفاجآت -->
-    <div class="modal" id="modal">
-        <div class="modal-card">
-            <button class="close-modal" id="closeModal">×</button>
-            <div class="modal-symbol" id="modalSymbol">♡</div>
-            <p class="eyebrow" id="modalEyebrow">A SECRET FOR YOU</p>
-            <h2 id="modalTitle">رسالة ليكي</h2>
-            <div class="modal-divider"></div>
-            <p class="modal-text" id="modalText"></p>
-            <div class="modal-extra" id="modalExtra"></div>
-            <button class="primary-btn modal-btn" id="modalAction">كمّلي رحلتكِ ♥</button>
-        </div>
-    </div>
-
-    <audio id="backgroundMusic" loop>
-        <source src="music.mp3" type="audio/mpeg">
-    </audio>
-
-    <script src="script.js"></script>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <audio id="backgroundMusic" src="music.mp3" loop preload="none"></audio>
+  <script src="script.js"></script>
 </body>
 </html>
